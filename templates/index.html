@@ -1,17 +1,25 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Django forms</title>
-    <h1>First page</h1>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<form method="post">
-    {% csrf_token %}
-    <table>
-        {{ form }}
-    </table>
-    <input type="submit" value="Отправить">
-</form>
+<div class="wrapper">
+    <header><h1>Client's page</h1></header>
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            <table>
+                {{ form }}
+            </table>
+            <input type="submit" value="Отправить" class="submit-button">
+        </form>
+    </main>
+</div>
 </body>
 </html>
